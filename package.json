@@ -1,0 +1,20 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaumnen/url-shortener.git"
+  },
+  "author": "kaumnen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaumnen/url-shortener/issues"
+  },
+  "homepage": "https://github.com/kaumnen/url-shortener#readme"
+}
