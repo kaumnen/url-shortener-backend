@@ -8,4 +8,4 @@ mongoose.connect(MONGO_URI, {
 });
 
 const connection = mongoose.connection;
-module.exports = connection;
+export default connection;

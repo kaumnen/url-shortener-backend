@@ -5,3 +5,7 @@ const urlSchema = new mongoose.Schema({
     originalUrl: String,
     shortenedUrl: String
 });
+
+const urlModel = mongoose.model('Url', urlSchema);
+
+export default urlModel;
