@@ -1,5 +1,5 @@
 import express from 'express';
-import { Url } from '../models/urlModel';
+import { urlModel } from '../models/urlModel.js';
 
 const router = express.Router();
 
@@ -7,7 +7,7 @@ router.get('/:code', async (req, res) => {
     const { code } = req.params;
 
     try {
-        const url = await Url.findOne({ shortenedUrl: code });
+        const url = await urlModel.findOne({ shortenedUrl: code });
         if (url) {
             res.redirect(url.originalUrl);
         } else {

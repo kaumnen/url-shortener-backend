@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
-//add config file dotenv with import
 import 'dotenv/config';
-
-mongoose.connect(MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+try {
+    mongoose.connect(process.env.MONGO_URI);
+    console.log('Connected to MongoDB');
+} catch (error) {
+    console.error(error);
+}
 
 const connection = mongoose.connection;
-export default connection;
+export { connection };
