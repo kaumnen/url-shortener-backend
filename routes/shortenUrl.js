@@ -10,11 +10,12 @@ const baseUrl = process.env.BASE_URL;
 
 router.post('/shorten', async (req, res) => {
     const { originalUrl } = req.body;
+
     if (!validUrl.isUri(originalUrl)) {
          return res.status(400).json({ error: 'Invalid URL' });
     }
 
-    const randomSlug = cryptoRandomString({length: 5, type: 'url-safe'});
+    const randomSlug = cryptoRandomString({ length: 5, type: 'url-safe' });
 
     if (validUrl.isUri(originalUrl)) {
         try {
