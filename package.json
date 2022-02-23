@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/kaumnen/url-shortener/issues"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "homepage": "https://github.com/kaumnen/url-shortener#readme",
   "dependencies": {
     "crypto-random-string": "^4.0.0",
