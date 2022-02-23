@@ -2,10 +2,11 @@ import express from 'express';
 import cryptoRandomString from 'crypto-random-string';
 import { urlModel } from '../models/urlModel.js';
 import validUrl from 'valid-url';
+import 'dotenv/config';
 
 const router = express.Router();
 
-const baseUrl = 'akom.me/';
+const baseUrl = process.env.BASE_URL;
 
 router.post('/shorten', async (req, res) => {
     const { originalUrl } = req.body;
