@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use('/', redirect);
-app.use('/api/url', shortenUrl);
+app.use('/api', shortenUrl);
 
 connection.on('open', () => {
     console.log('MongoDB database connection established successfully');
