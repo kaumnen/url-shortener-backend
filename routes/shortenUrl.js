@@ -10,13 +10,11 @@ const baseUrl = process.env.BASE_URL;
 
 router.post('/shorten', async (req, res) => {
     const { originalUrl } = req.body;
-    console.log(req.body);
     if (!validUrl.isUri(originalUrl)) {
          return res.status(400).json({ error: 'Invalid URL' });
     }
 
-    const randomSlug = cryptoRandomString({ length: 6, type: 'url-safe' });
-    console.log(randomSlug);
+    const randomSlug = cryptoRandomString({length: 5, type: 'url-safe'});
 
     if (validUrl.isUri(originalUrl)) {
         try {
@@ -25,7 +23,7 @@ router.post('/shorten', async (req, res) => {
             if (url) {
                 return res.status(200).json({
                     originalUrl,
-                    shortenedUrl: baseUrl + url.shortenedUrl
+                    shortenedUrl: baseUrl + '/' + url.shortenedUrl
                 });
             } else {
                 url = new urlModel({
@@ -37,7 +35,7 @@ router.post('/shorten', async (req, res) => {
 
                 return res.status(200).json({
                     originalUrl,
-                    shortenedUrl: baseUrl + url.shortenedUrl
+                    shortenedUrl: baseUrl + '/' + url.shortenedUrl
                 });
             }
         } catch {
